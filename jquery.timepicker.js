@@ -147,6 +147,9 @@
                 }
 
                 if (min !== null && max !== null) {
+                    if (max < min) {
+                        return (time <= max || time >= min) === false;
+                    }
                     return time >= min && time <= max;
                 } else if (min !== null) {
                     return time >= min;
